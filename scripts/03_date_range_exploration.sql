@@ -17,7 +17,7 @@ SELECT
 	MIN(order_date) first_order_date,
 	MAX(order_date) last_order_date,
 	DATEDIFF(month, MIN(order_date), MAX(order_date)) AS order_range_months
-FROM gold.fact_sales
+FROM gold.fact_sales;
 
 -- Find the youngest and the older customer
 SELECT
@@ -25,4 +25,4 @@ SELECT
 	DATEDIFF(year, MIN(birthdate), GETDATE()) AS oldest_age,
 	DATEDIFF(year, MAX(birthdate), GETDATE()) AS youngest_age,
 	MAX(birthdate) AS youngest_birthdate
-FROM gold.dim_customers
+FROM gold.dim_customers;
